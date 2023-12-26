@@ -1,0 +1,8 @@
+- name: Datadog Static Analysis                
+  uses: DataDog/datadog-static-analyzer-github-action@v1.0.7
+  
+  rulesets: 
+    - python-code-style
+    - python-best-practices
+    - python-inclusive
+
