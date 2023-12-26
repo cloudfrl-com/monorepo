@@ -1,0 +1,19 @@
+on: [push]
+
+jobs:
+  check-quality:
+    runs-on: ubuntu-latest
+    name: Datadog Static Analyzer
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Check code meets quality standards
+        id: datadog-static-analysis
+        uses: DataDog/datadog-static-analyzer-github-action@v1
+        with:
+          dd_app_key: f2323fd0-8c75-433a-9292-edf192c0a773
+          dd_api_key: 5e2c40ab1872e7d937fcd34d588d5d38df9daccd
+          dd_service: "my-service"
+          dd_env: "ci"
+          cpu_count: 2
+          enable_performance_statistics: false
